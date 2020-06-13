@@ -1,0 +1,105 @@
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Vidaloka|Oswald:400,300);
+    @import url(https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap);
+    @import url(https://fonts.googleapis.com/css2?family=Gugi&display=swap);
+.container {
+position: relative;
+ height: 100%;
+ width: 100%;
+ overflow: auto;
+ background: lighten(navajowhite, 10);
+}
+
+.card {
+ position: absolute;
+ height: 780px;
+ width: 400px;
+ background: #fff;
+ margin: 100px 0;
+ overflow: hidden;
+ box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+ left: 40%;
+ 
+}
+
+.border {
+ position: absolute;
+ top: 13px;
+ left: 8px;
+ height: 800px;
+ width: 380px;
+ border: 3px double black;
+
+}
+
+.table {
+    position:absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 0;
+    left: -30px;
+    top: 70px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 10pt;
+    
+    
+}
+.avatar {
+ height: 180px;
+ width: 180px;
+ border-radius: 50%;
+ border: 1px solid black;
+ overflow: hidden;
+ margin: 40px auto;
+ background-color: black;
+ 
+}
+.stats {
+ font-family: 'Gugi', cursive;
+ position: absolute;
+ padding-top: 5px;
+ height: 10px;
+ width: 300px;
+ font-size: 8pt;
+ margin: 5px 0 10px;
+ text-align: center;
+ left: 50px;
+ border-top: 1px solid black;
+}
+.info {
+    position: absolute;
+    top: 480px;
+    left: 130px;
+    
+}
+</style>
+ 
+ <div class="container">
+    <div class="card">
+        <div class="border"></div>
+        <div class="avatar">
+            <img src="다운로드.jpg" alt="이미지" />
+        </div>
+        <hr/>
+        <div class="stats">
+            <h2>단어 수를 세라고 하셨습니까 휴먼?</h2>
+        <hr/>
+
+        <div class="table">
+            <form action="{% url 'count' %}">
+                <textarea cols=40 rows=20 name='fulltext'></textarea>
+                <br>
+                <br>
+                <input type="submit" value="count!">
+            </form>
+                
+            <blockquote>“내가 세지 못하는 단어란 없다.”</blockquote>
+        </div>
+
+        <div class="info">
+            <a href="{% url 'about' %}">ABOUT</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
